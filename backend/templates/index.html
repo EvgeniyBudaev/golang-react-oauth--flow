@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="actions">
+        <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
+        <a href="/exchange">Exchange</a>
+    </div>
+    <div class="session-information">
+        <div class="auth-code">Auth Code: {{ .AuthCode }}</div>
+        <div class="session-code">Session Code: {{ .SessionState }}</div>
+        <div class="access-token">Access Token: {{ .AccessToken }}</div>
+        <div class="refresh-token">Refresh Token: {{ .RefreshToken }}</div>
+        <div class="scopes">Scopes: {{ .Scope }}</div>
+    </div>
+    <br><br>
+    <div class="systems">
+        {{ block "systems" .Systems }}
+            No Systems found
+        {{ end }}
+    </div>
+</body>
+</html>
